@@ -1,0 +1,33 @@
+html
+	head
+		title Search Fruit Page
+		style
+			include ../../public/styles/bac.css
+
+	body
+		include ../partials/header
+		b
+		|
+		|
+		form(action='/fruits', method='GET')
+			label(for='search') Type to search:
+			input(type='text', id='search' name='q', value='')
+			label(for='boost') Boost:
+			select(name='boost' id='boost')
+				option(value='true') True
+				option(value='false') False
+			label(for='limit') Limit:
+			select(name='limit' id='limit')
+				- var i = 1;
+				while i <=50
+					if(i == 10)
+						option(value=`${i}` selected='selected')=i++
+					else
+						option(value=`${i}`)=i++
+
+			input(type='submit', value='Search')
+
+
+
+
+		include ../partials/footer

@@ -1,0 +1,47 @@
+html
+  head
+    title Profile #{page.title} Page
+    style
+      include ../../public/styles/bac.css
+    body
+    include ../partials/header
+
+
+    div#main
+      h1 Hello this is #{page.title}'s Page
+
+
+    div
+
+      p Title: #{page.title}
+      p Page Rank: #{page.page_rank}
+      p the original URL is:
+        br
+        a(href=page.uri) #{page.uri}
+      p Page Content: #{page.content}
+        br
+        |
+        |
+      p Page Word Count:
+        br
+        |
+        |
+        each v,k in page.contentCount
+             label #{k} : #{v},
+      p this page got visited by #{page.incoming.length} times
+      p the pages that outgoing from #{page.title} are:
+        each l in page.outgoing
+             br
+             |
+             |
+             a(href=l)  #{ l}
+      p the pages that incoming to #{page.title} are:
+        each l in page.incoming
+             br
+             |
+             |
+             a(href=l) #{ l}
+
+
+
+    include ../partials/footer

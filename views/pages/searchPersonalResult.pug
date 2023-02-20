@@ -1,0 +1,28 @@
+html
+	head
+		title Personal Search Result Pages
+		style
+			include ../../public/styles/bac.css
+
+
+	body
+		include ../partials/header
+
+
+		div(id="main")
+			div
+				h1 Top Search Results for Personal
+				br
+				each page in pages
+					label #{page.title}:
+					|
+					|
+					a(href="/personal/"+page._id) #{page.uri}
+					br
+					label Search Score: #{page.score}
+					br
+					br
+
+
+
+		include ../partials/footer

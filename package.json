@@ -1,0 +1,28 @@
+{
+  "name": "a1",
+  "version": "1.0.4",
+  "description": "Name: Yangrui Zhu, Jiaxin Yu Student ID: 101111385,100818677",
+  "main": "app.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "double-ended-queue": "^2.1.0-0",
+    "elasticlunr": "^0.9.5",
+    "express": "^4.17.1",
+    "is-html": "^3.0.0",
+    "ml-matrix": "^6.8.0",
+    "mongoose": "^6.0.12",
+    "pug": "^3.0.2",
+    "uri-js": "^4.4.1",
+    "valid-url": "^1.0.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yangrui Zhu, Jiaxin Yu",
+  "license": "ISC",
+  "devDependencies": {},
+  "keywords": [
+    "assignment",
+    "1"
+  ]
+}
