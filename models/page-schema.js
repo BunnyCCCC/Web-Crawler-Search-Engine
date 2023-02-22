@@ -1,8 +1,8 @@
 
-/***********************************************************/
-/* This is server side page-schema.js file for fruits 		 */
-/* which sets up Schema of collection pages in db A1       */
-/***********************************************************/
+/*********************************************************************/
+/* This is server side page-schema.js file for fruits 		           */
+/* which sets up Schema of collection pages in db crawledpages       */
+/*********************************************************************/
 
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;

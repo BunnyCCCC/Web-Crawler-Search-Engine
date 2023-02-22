@@ -14,7 +14,7 @@ Source Files:
     11.fruit-crawler.js to crawl the fruits page.
     12.fruit-pagerank.js to calculate the pagerank for fruits data.
     13.personal_crawler.js to crawl the personal choice of website.(https://carleton.ca)
-    14.personal_pagerank.js to calculate the pagerank for personals data in database A1.
+    14.personal_pagerank.js to calculate the pagerank for personals data in database crawledpages.
     15.personal_index.json (each time you run app.js, it will generate new personal_index.json)
 
 
@@ -24,11 +24,11 @@ Instruction:
       mongod --dbpath=<database folder>
 
     2.*****IMPORTANT*****
-      before running the program, make sure to clean the A1 database using
+      before running the program, make sure to clean the crawledpages database using
       node database-cleaner.js
       'npm install' to install all necessary dependencies in the directory where the app.js is.
 
-      and then initialize the database collection for fruits(called pages in database A1) using:
+      and then initialize the database collection for fruits(called pages in database crawledpages) using:
       node fruit-crawler.js
 
       ***note*** the fruits_pagerank.js dose not need to run seperately, it's called inside fruit-crawler.js
@@ -71,14 +71,14 @@ Design:
     A simple search engine with specified to fruits data and personal choice of data (https://carleton.ca in this case).
 
     *****fruits data*****
-    The data was crawled using fruit-crawler.js and stored under pages collection in db A1. Each page was saved while crawling the page.
+    The data was crawled using fruit-crawler.js and stored under pages collection in db crawledpages. Each page was saved while crawling the page.
     and all incoming links are calculated after 1000 pages are crawled and saved in the database.
     Incoming and outgoing links are saved as titles since each fruit page has different titles.
     pid were added to calculated the pagerank of the fruits data and saved as a counter schema in counters collection in the database.
     Each time when app.js is started, the fruit_index.json will be recalculated incase some change to the database.
 
     *****personals data*****
-    The data was crawled using personal_crawler.js and stored under personals collection in db A1. Each page was saved while crawling the page.
+    The data was crawled using personal_crawler.js and stored under personals collection in db crawledpages. Each page was saved while crawling the page.
     and all incoming links are calculated after around 550 pages.
     while crawling the page, we restrict the type of page we crawl and data we saved in the database. We also restricted the number of crawled
     pages by using the total database count and crawler's queue size to predict the potential pages we crawled in total. The number of pages we

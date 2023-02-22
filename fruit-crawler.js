@@ -23,7 +23,7 @@ let dbCount=0;
 let freq = {};
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/A1", async function(err, client) {
+mongoose.connect("mongodb://127.0.0.1:27017/crawledpages", async function(err, client) {
 		if (err) {
 			console.log("Error in connecting to database");
 			console.log(err);

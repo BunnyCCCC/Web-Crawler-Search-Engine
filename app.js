@@ -50,7 +50,7 @@ app.get("/", (req, res, next) => { res.render("pages/index"); });
 
 
 //Connect to database a4 which was initialized from database-initializer.js
-mongoose.connect("mongodb://127.0.0.1:27017/A1", function(err, client) {
+mongoose.connect("mongodb://127.0.0.1:27017/crawledpages", function(err, client) {
 	if (err) {
 		console.log("Error in connecting to database");
 		console.log(err);

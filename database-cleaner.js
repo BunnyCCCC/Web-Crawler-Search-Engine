@@ -15,7 +15,7 @@ let db;
 MongoClient.connect("mongodb://127.0.0.1:27017/", function(err, client) {
   if(err) throw err;
 
-  db = client.db('A1');
+  db = client.db('crawledpages');
   //if database is already been cleared
   db.listCollections().toArray(function(err, result){
 	 if(result.length == 0){

@@ -31,7 +31,7 @@ async function init(){
 }
 
 //connect to mongodb
-mongoose.connect("mongodb://127.0.0.1:27017/A1", async function(err, client) {
+mongoose.connect("mongodb://127.0.0.1:27017/crawledpages", async function(err, client) {
 		if (err) {
 			console.log("Error in connecting to database");
 			console.log(err);
@@ -61,7 +61,7 @@ async function populateMatrix(){
 					//console.log("result " + result.uri);
 					let j = result.pid;
 					if(result.pid==null){
-						console.log(result);
+						//console.log(result);
 					}else{
 						//console.log(j);
 						addPagelinks(i, j);

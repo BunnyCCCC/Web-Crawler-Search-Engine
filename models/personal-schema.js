@@ -1,8 +1,8 @@
 
-/***********************************************************/
-/* This is server side page-schema.js file  		           */
-/* which sets up Schema of collection personals in db A1   */
-/***********************************************************/
+/*********************************************************************/
+/* This is server side page-schema.js file  		                     */
+/* which sets up Schema of collection personals in db crawledpages   */
+/*********************************************************************/
 
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
