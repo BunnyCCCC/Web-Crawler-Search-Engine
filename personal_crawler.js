@@ -51,6 +51,10 @@ const c = new Crawler({
   callback: async function (error, res, done) {
 	if (error) {
 	  console.log(error);
+		if(error.code == 'ETIMEDOUT' || error.code == 'ECONNRESET'){
+			//if timeout requesting the current page or network gives up, call done();
+			done();
+		}
 	} else {//start things
 	  let pageLink = res.request.uri.href;
 	  if(pageLink.charAt(pageLink.length - 1) === '/'){
@@ -145,7 +149,7 @@ c.on('drain', function () {//drain means queue is empty
 
 //add the first uri in the queue
 async function startCrawl(){
-	c.queue({uri:'https://carleton.ca'});
+	c.queue({uri:'https://carleton.ca/'});
 }
 
 //generate sequential pid(start from 0)
