@@ -22,7 +22,7 @@ let db;
 let dbCount=0;
 let freq = {};
 
-
+mongoose.set('strictQuery', false);//for mongoose 7.0
 mongoose.connect("mongodb://127.0.0.1:27017/crawledpages", async function(err, client) {
 		if (err) {
 			console.log("Error in connecting to database");
